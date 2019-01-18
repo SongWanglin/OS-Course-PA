@@ -3,26 +3,27 @@
 
 int main(int argc, char* argv[]){
 
-    int number;
-    char chr;
+    int number[1]; // how many times the character repeat
+    char chr[1]; //the repeated character
+    FILE *fp;
 
-    if (argc == 1){ //no command-line arguments
+    if (argc == 1){ 
         printf("my-unzip: file1 [file2 ...]\n");
         return 1;
     }
-    for (int i = 1; i<argc; i++){ //go through all command line parameters except the first one
-        FILE *file;
-        file = fopen(argv[i], "rb");
-        if (!file){
+    for (int i = 1; i<argc; i++){ 
+        fp = fopen(argv[i], "r");
+        if (!fp){
             printf("my-unzip: cannot open file\n");
             return 1;
         }
-        while(fread(&number, sizeof(int), 1, file)){ //put 4 bytes from file inside number variable
-            fread(&chr, sizeof(char), 1, file); //put 1 byte from file inside chr variable
-            for (int i=0; i<number; i++) //print chr number times
-                putc(chr, stdout);
+        while(fread(&number, sizeof(int), 1, fp)){ //put 4 bytes from file inside number variable
+            if( fread(&chr, sizeof(char), 1, fp)!=1)
+		    break;
+	    for (int i=0; i<number[0]; i++)
+		    putc(chr[0], stdout);
         }
-        fclose(file);
+        fclose(fp);
     }
-    putc('\n', stdout);
+    return 0;
 }
