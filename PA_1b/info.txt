@@ -1,0 +1,21 @@
+Name: Wanglin Song
+ID: A20354898
+Email: wsong14@hawk.iit.edu
+
+
+List of what I changed (in case I made mistakes):
+syscall.h:
+#define SYS_getreadcount 22
+
+syscall.c:
+extern in getreadcount(void);
+[SYS_getreadcount]sys_getreadcount
+
+usys.S:
+SYSCALL(getreadcount)
+
+user.h:
+int getreadcount(void);
+
+sysfile.c:
+implementing the getreadcount syscall using global variable
