@@ -3,7 +3,6 @@
 # memory at physical address 0x7c00 and starts executing in real mode
 # with %cs=0 %ip=7c00
 
-
 .section .text
 .code16
 .globl _start
