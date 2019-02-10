@@ -3,18 +3,22 @@
 # memory at physical address 0x7c00 and starts executing in real mode
 # with %cs=0 %ip=7c00
 
+#.section .text
+#.code16			# Assemble for 16-bit mode
+
+
 .section .text
 .code16
 .globl _start
 _start:
     	#Set up data segment registers(DS, ES, SS)
     	movw $0x7c0, %ax 	# drop us at physical address 0x7c00
-    	addw $0x20, %ax		# MBR
-    	movw %ax, %ss		# SS <- stack segment after MBR
+    	addw $0x20, %ax	# MBR
+    	movw %ax, %ss	# SS <- stack segment after MBR
     	movw $0x1000, %sp	# stack pointer at 0x1000
 
     	movw $0x7c0, %ax
-    	movw %ax, %ds		# DS <- data segment
+    	movw %ax, %ds	# DS <- data segment
 	.set OFFSET, my_msg - _start
 	movw $OFFSET, %si
     
