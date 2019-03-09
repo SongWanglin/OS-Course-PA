@@ -1,19 +1,2 @@
-FLAGS = -Wall -pthread
-INCLUDES = ../include
-
-all: cpu mem threads io
-
-clean:
-			rm -f cpu mem threads io
-
-cpu: cpu.c
-			gcc -I $(INCLUDES) -o cpu cpu.c $(FLAGS)
-
-mem: mem.c 
-			gcc -I $(INCLUDES) -o mem mem.c $(FLAGS)
-
-threads:	threads.c
-			gcc -I $(INCLUDES) -o threads threads.c $(FLAGS)
-
-io:	 io.c
-			gcc -I $(INCLUDES) -o io io.c $(FLAGS)
+题目描述
+输入一个整数数组，实现一个函数来调整该数组中数字的顺序，使得所有的奇数位于数组的前半部分，所有的偶数位于数组的后半部分，并保证奇数和奇数，偶数和偶数之间的相对位置不变。
