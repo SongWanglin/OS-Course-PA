@@ -1,5 +1,5 @@
 CC:=gcc
-CFLAGS:= -Wall -Werror -O2
+CFLAGS:= -Wall -Werror -O2 -pthread
 TARGETS:=my-cat my-grep my-zip my-unzip
 
 all: $(TARGETS)

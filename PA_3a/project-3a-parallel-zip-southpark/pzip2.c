@@ -58,7 +58,7 @@ int main(int argc, char **argv)
 		exit(1);
 	}
 	living = 1;
-	pgsize = getpagesize()*32;
+	pgsize = getpagesize()*1024;
 	int nprocs = get_nprocs();
 	int numfiles = argc - 1;
 	int lf_cnt = 0;
