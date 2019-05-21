@@ -1,8 +1,0 @@
-Name: Wanglin Song
-ID: A20354898
-Email: wsong14@hawk.iit.edu
-
-Note: 
-my-grep2.c is there only for comparison purpose
-(I was trying to use regex.h to pass all tests),
-not for actual submission.
