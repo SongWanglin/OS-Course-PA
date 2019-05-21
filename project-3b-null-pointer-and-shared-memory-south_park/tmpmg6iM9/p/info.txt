@@ -1,0 +1,9 @@
+
+
+
+Modification:
+Part 1:
+ 1) dereference a null pointer in tester.c user program
+ 2) change the sz in exec.c from 0 to PGSIZE(0x1000 = 4096 bytes)
+ 3) change the copyuvm() in vm.c (for loop start from PGSIZE instead of 0, so fork will work)
+ 4) change the entry point of user program loading 

@@ -1,0 +1,18 @@
+Name: Wanglin Song
+Email: wsong14@hawk.iit.edu
+ID: A20354898
+Name:Jia Tan
+Email:jtan21@hawk.iit.edu    popcorn.tan@gmail.com
+ID:A20433208
+Note:
+ The first pzip only used one mutex lock to synchronize consumer threads. It assumes
+ that we have a super large queue (never fill up) and inifite memory. What it does is 
+ kinda of straightforward: one producer divide files into chunks and mmap everything, then
+ multiple consumer threads to compress data in memory. Edge cases like not enough memory
+ for memory mapping, queue gets filled up, are just ignored.
+
+ For first pzip, if (chunk_size * q_size) is smaller than file size, than zip can't be 
+ finished. So chunk_size >= 2MB is recommended. 
+ 
+ Will try to use semaphore to synchronize producer and consumer threads, if I still have 
+ time by Friday. 

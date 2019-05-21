@@ -1,0 +1,20 @@
+
+List of what I changed (in case I made mistakes):
+syscall.h:
+#define SYS_getreadcount 22
+
+syscall.c:
+extern in getreadcount(void);
+[SYS_getreadcount]sys_getreadcount
+
+usys.S:
+SYSCALL(getreadcount)
+
+user.h:
+int getreadcount(void);
+
+sysfile.c:
+implementing the getreadcount syscall using global variable
+
+Note: qemu pc simulator (or equivalent) is needed if you want to run it on your home system;
+      I'm not sure if csh is needed since it works well on the GNU Bash shell on my Ubuntu machine.

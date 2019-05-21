@@ -1,0 +1,8 @@
+Name: Wanglin Song
+Email: wsong14@hawk.iit.edu
+ID: A20354898
+
+Note: 1) "make all" to build the wordcount with mapreduce, "make test-p4b" to run the program with some test input.
+      I wish I could have time to write a complete test script within the given deadline, but the syntax of csh shell
+      script was holding me back.
+      2) I'm using the 48 hrs late credits for this project.
